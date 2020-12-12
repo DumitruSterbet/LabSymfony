@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tara import{% endblock %}
+
+{% block body %}
+ <center><h1>Tara import - Creare</h1></center>
+
+    {{ include('tara_prod/_form.html.twig') }}
+
+    <h3 style="color: #6b5b95;"><center><a href="{{ path('tara_prod_index') }}">List</a></center></h3>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produse{% endblock %}
+
+{% block body %}
+   <center><h1>Produse</h1></center>
+</br></br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th><h3>Id</h3></th>
+                <th><h2>Name</h2></th>
+                <th><h2>Descriere</h2></th>
+                <th><h2>Pret</h2></th>
+                <th><h2>Tara producator</h2></th>
+                <th><h3>actions</h3></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for prod_desc in prod_descs %}
+            <tr>
+                <td>{{ prod_desc.id }}</td>
+                <td>{{ prod_desc.Name }}</td>
+                <td>{{ prod_desc.Descriere }}</td>
+                <td>{{ prod_desc.Pret }}</td>
+                <td>{{ prod_desc.TaraProd }}</td>
+                <td>
+                    <p><a href="{{ path('prod_desc_show', {'id': prod_desc.id}) }}">Show</a> |
+                    <a href="{{ path('prod_desc_edit', {'id': prod_desc.id}) }}">Edit</a></p>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+ <hr>
+  </br></br>
+    <a href="{{ path('prod_desc_new') }}"><center><h3>Adauga produs</h3></center></a>
+{% endblock %}

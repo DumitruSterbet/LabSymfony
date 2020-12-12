@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produse{% endblock %}
+
+{% block body %}
+  <center><h1>Produs - Edit</h1></center>
+</br></br>
+{% for message in app.flashes('info2') %}
+    	<div class="alert alert-warning">
+   			 {{message}}
+    	</div>
+
+    {% endfor%}
+
+    {{ include('prod_desc/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <h3 style="color: #6b5b95;"><center><a href="{{ path('prod_desc_index') }}">List</a></center></h3>
+
+     <center>{{ include('prod_desc/_delete_form.html.twig') }}</center>
+{% endblock %} 

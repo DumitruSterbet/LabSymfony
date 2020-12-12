@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tara import{% endblock %}
+
+{% block body %}
+ <center><h1>Tara import- Show</h1></center>
+</br></br>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th><h3>Id</h3></th>
+                <td><h3>{{ tara_prod.id }}</h3></td>
+            </tr>
+            <tr>
+                <th><h3>Tara de import</h3></th>
+                <td><h3>{{ tara_prod.Tara }}</h3></td>
+            </tr>
+            <tr>
+                <th><h3>Cantitate</h3></th>
+                <td><h3>{{ tara_prod.Cantitate }}</h3></td>
+            </tr>
+        </tbody>
+    </table>
+  <hr>
+  </br></br>
+    <h3 style="color: #6b5b95;"><center><a href="{{ path('tara_prod_index') }}">List</a></center></h3>
+</br>
+    <h3 style="color: #6b5b95;"><center><a href="{{ path('tara_prod_edit', {'id': tara_prod.id}) }}">Edit</a></center></h3>
+</br>
+     <center>{{ include('tara_prod/_delete_form.html.twig') }} </center>
+{% endblock %}

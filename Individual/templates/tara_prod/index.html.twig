@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tara de import{% endblock %}
+
+{% block body %}
+    <center><h1>Tara de import</h1></center>
+</br></br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th><h3>Id</h3></th>
+                <th><h2>Tara</h2></th>
+                <th><h2>Cantitate</h2></th>
+                <th><h3>Modifica</h3></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tara_prod in tara_prods %}
+            <tr>
+                <td>{{ tara_prod.id }}</td>
+                <td>{{ tara_prod.Tara }}</td>
+                <td>{{ tara_prod.Cantitate }}</td>
+                <td>
+                    <p><a href="{{ path('tara_prod_show', {'id': tara_prod.id}) }}">Show</a>
+                     | 
+                    <a href="{{ path('tara_prod_edit', {'id': tara_prod.id}) }}">Edit</a></p>
+                </td>
+            </tr>
+
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+  <hr>
+  </br></br>
+    <a href="{{ path('tara_prod_new') }}"><center><h3>Add New</h3></center></a>
+{% endblock %}
